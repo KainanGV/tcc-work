@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+    "start": "ts-node build/server.js",
+    "build": "tsc -p ."
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
