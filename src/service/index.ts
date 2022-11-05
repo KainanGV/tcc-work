@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { AppError } from "../error/AppError";
 
 const domain = `https://api.the-odds-api.com/v4/sports`;
 
