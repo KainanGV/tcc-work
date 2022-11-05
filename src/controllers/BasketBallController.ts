@@ -1,7 +1,7 @@
 import { Response, Request } from "express";
 
 import { AppError } from "../error/AppError";
-import { BasketBallUseCase } from "../useCases/BasketBallUseCase";
+import { BasketBallUseCase } from "../useCases/BasketballUseCase";
 
 class BasketBallController {
   async handle(request: Request, response: Response) {
