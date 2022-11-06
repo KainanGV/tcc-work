@@ -13,9 +13,13 @@ exports.FootballUseCase = void 0;
 const AppError_1 = require("../error/AppError");
 const service_1 = require("../service");
 const homeBet = ["betclic", "betway", "betfair", "onexbet"];
+const sportsAccept = ["soccer_brazil_campeonato", "soccer_epl", "soccer_fifa_world_cup", "soccer_france_ligue_one", "soccer_germany_bundesliga", "soccer_italy_serie_a", "soccer_portugal_primeira_liga", "soccer_spain_la_liga"];
 class FootballUseCase {
     execute(league) {
         return __awaiter(this, void 0, void 0, function* () {
+            const isExist = sportsAccept.includes(league.toLowerCase());
+            if (!isExist)
+                throw new AppError_1.AppError("sport is not avaliable");
             const response = yield (0, service_1.getData)(league);
             if (response.status === 200) {
                 const data = yield response.json();
