@@ -8,7 +8,7 @@ class FootballController {
     try {
       const footballUseCase = new FootballUseCase();
 
-      const data = await footballUseCase.execute(request.params.sport);
+      const data = await footballUseCase.execute(request.params.sport);      
 
       return response.json(data);
     } catch (e) {

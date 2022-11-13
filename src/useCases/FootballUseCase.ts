@@ -3,7 +3,7 @@ import { getData } from "../service";
 
 const homeBet = ["betclic", "betway", "betfair", "onexbet"];
 
-const sportsAccept = ["soccer_brazil_campeonato" , "soccer_epl" , "soccer_fifa_world_cup" , "soccer_france_ligue_one" , "soccer_germany_bundesliga" , "soccer_italy_serie_a" , "soccer_portugal_primeira_liga" , "soccer_spain_la_liga"]
+const sportsAccept = ["soccer_brazil_campeonato" , "soccer_epl" , "soccer_fifa_world_cup" , "soccer_france_ligue_one" , "soccer_germany_bundesliga" , "soccer_italy_serie_a" , "soccer_portugal_primeira_liga" , "soccer_spain_la_liga", "soccer_uefa_champs_league", "soccer_uefa_europa_league"]
 
 class FootballUseCase {
   async execute(league: string) {
@@ -13,8 +13,9 @@ class FootballUseCase {
     
     const response = await getData(league);
 
+    const data = await response.json();    
+
     if (response.status === 200) {
-      const data = await response.json();
 
       data.forEach((element: any) => {
         const resultFilter = element.bookmakers.filter((value: any) =>
