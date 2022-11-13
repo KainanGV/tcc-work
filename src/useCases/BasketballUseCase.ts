@@ -3,7 +3,7 @@ import { getData } from "../service";
 
 const homeBet = ["betclic", "betway", "betfair", "onexbet"];
 
-const sportsAccept = ["basketball_nba"]
+const sportsAccept = ["basketball_nba", "basketball_euroleague"]
 
 class BasketBallUseCase {
   async execute(league: string) {
