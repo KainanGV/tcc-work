@@ -7,9 +7,9 @@ const sportsAccept = ["soccer_brazil_campeonato" , "soccer_epl" , "soccer_fifa_w
 
 class FootballUseCase {
   async execute(league: string) {
-    const isExist = sportsAccept.includes(league.toLowerCase())
+    // const isExist = sportsAccept.includes(league.toLowerCase())
 
-    if(!isExist) throw new AppError("sport is not avaliable")
+    // if(!isExist) throw new AppError("sport is not avaliable")
     
     const response = await getData(league);
 
